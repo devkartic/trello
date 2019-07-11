@@ -37,7 +37,6 @@ class AuthController extends Controller
         $user = User::where('email', $request->input('email'))
             ->first();
 
-
         if(!$user){
             return response()->json(['status' => 'error', 'message' => 'User not found!'], 401);
         }

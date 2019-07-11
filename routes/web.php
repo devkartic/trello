@@ -21,6 +21,7 @@ $router->post('/register', 'AuthController@register');
 
 
 $router->get('/boards', 'BoardController@index');
+//$router->get('/boards', ['middleware'=>'auth', 'BoardController@index']);
 $router->post('/boards', 'BoardController@store');
 $router->get('/boards/{board}', 'BoardController@show');
 

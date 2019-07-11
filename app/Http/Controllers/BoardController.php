@@ -14,7 +14,8 @@ class BoardController extends Controller
      */
     public function __construct()
     {
-        //
+//        $this->middleware('auth', ['only'=>'store']); // Single privilege for Auth
+        $this->middleware('auth'); // All privilege for Auth
     }
 
     public function index(){
