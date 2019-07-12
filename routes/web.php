@@ -24,4 +24,6 @@ $router->get('/boards', 'BoardController@index');
 //$router->get('/boards', ['middleware'=>'auth', 'BoardController@index']);
 $router->post('/boards', 'BoardController@store');
 $router->get('/boards/{board}', 'BoardController@show');
+$router->patch('/boards/{board}', 'BoardController@update');
+$router->delete('/boards/{board}', 'BoardController@destroy');
 

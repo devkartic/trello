@@ -21,6 +21,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'username', 'email', 'api_token', 'password'
     ];
 
+    public function boards(){
+        return $this->hasMany(Board::class);
+    }
+
     /**
      * The attributes excluded from the model's JSON form.
      *
