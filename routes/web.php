@@ -20,10 +20,17 @@ $router->get('/logout', 'AuthController@logout');
 $router->post('/register', 'AuthController@register');
 
 
-$router->get('/boards', 'BoardController@index');
 //$router->get('/boards', ['middleware'=>'auth', 'BoardController@index']);
+
+$router->get('/boards', 'BoardController@index');
 $router->post('/boards', 'BoardController@store');
 $router->get('/boards/{board}', 'BoardController@show');
 $router->patch('/boards/{board}', 'BoardController@update');
 $router->delete('/boards/{board}', 'BoardController@destroy');
+
+$router->get('/boards/{board}/lists', 'ListController@index');
+$router->post('/boards/{board}/lists', 'ListController@store');
+$router->get('/boards/{board}/lists/{list}', 'ListController@show');
+$router->patch('/boards/{board}/lists/{list}', 'ListController@update');
+$router->delete('/boards/{board}/lists/{list}', 'ListController@destroy');
 
